@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<maui:ReactiveContentPage
+    xmlns:shinyApp="clr-namespace:ShinyApp"
+    x:TypeArguments="shinyApp:MainViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maui="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+    x:DataType="shinyApp:MainViewModel"
+    x:Class="ShinyApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding Greeting}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="{Binding CounterButtonText}"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding ButtonClickedCommand}"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</maui:ReactiveContentPage>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<vm:MainPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:rxui="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+                         xmlns:vm="clr-namespace:ShinyApp"
+                         xmlns:shinyApp="clr-namespace:ShinyApp"
+                         x:Class="MainPage"
+                         Title="Contact Management">
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,*,Auto" 
+          Padding="20"
+          RowSpacing="20">
+
+        --><!-- Search Bar --><!--
+        <Entry Grid.Row="0" 
+               x:Name="SearchEntry"
+               Placeholder="Search contacts..."
+               ClearButtonVisibility="WhileEditing" />
+
+        --><!-- Add New Contact Section --><!--
+        <VerticalStackLayout Grid.Row="1" Spacing="10">
+            <Entry x:Name="NameEntry" 
+                   Placeholder="Enter name" />
+            <Entry x:Name="EmailEntry" 
+                   Placeholder="Enter email"
+                   Keyboard="Email" />
+            <Entry x:Name="PhoneEntry" 
+                   Placeholder="Enter phone"
+                   Keyboard="Telephone" />
+            <Button x:Name="SaveButton" 
+                    Text="Add Contact" />
+        </VerticalStackLayout>
+
+        --><!-- Validation Messages --><!--
+        <Label Grid.Row="2" 
+               x:Name="ValidationLabel"
+               TextColor="Red" />
+
+        --><!-- Stats --><!--
+        <Label Grid.Row="3" 
+               x:Name="StatsLabel" />
+
+        --><!-- Contact List --><!--
+        <CollectionView Grid.Row="4"
+                       x:Name="ContactList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem x:Name="DeleteSwipeItem"
+                                          Text="Delete"
+                                          BackgroundColor="Red" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="10">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}" 
+                                       FontAttributes="Bold" />
+                                <Label Text="{Binding Email}" 
+                                       FontSize="Small" />
+                                <Label Text="{Binding Phone}" 
+                                       FontSize="Small" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        --><!-- Loading Indicator --><!--
+        <ActivityIndicator Grid.Row="5" 
+                          x:Name="LoadingIndicator" />
+    </Grid>
+</vm:MainPage>-->
