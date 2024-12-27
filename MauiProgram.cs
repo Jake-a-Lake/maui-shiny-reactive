@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using CommunityToolkit.Maui.Markup;
 using Microsoft.Extensions.Diagnostics.Enrichment;
 using ShinyApp.Infrastructure;
+using ShinyApp.Views;
 using static Microsoft.Maui.Controls.Device;
 
 namespace ShinyApp
@@ -23,10 +24,17 @@ namespace ShinyApp
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 })
-                .UsePrism(
-                    new DryIocContainerExtension(),
-                    prism => prism.CreateWindow("NavigationPage/MainPage")
-                )
+                .UsePrism(new DryIocContainerExtension(), prism =>
+                {
+                    prism.RegisterTypes(container =>
+                        {
+                            container.RegisterForNavigation<AppShell>();
+                            container.RegisterForNavigation<MainPage>();
+                            container.RegisterForNavigation<SearchPage>();
+                            container.RegisterForNavigation<ProfilePage>();
+                        })
+                        .CreateWindow("AppShell");
+                })
                 .RegisterLogging()
                 .RegisterServices()
                 .RegisterShinyServices();
@@ -40,7 +48,11 @@ namespace ShinyApp
             builder.Services.AddSingleton<ILogEnricher, AppLogEnricher>();
 
             //pages and viewmodels
+            builder.Services.AddTransient<AppShell>(); 
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<SearchPage>();
+            builder.Services.AddTransient<ProfilePage>();
+            
             builder.Services.AddScoped<MainViewModel>();
 
 #if DEBUG

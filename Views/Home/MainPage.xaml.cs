@@ -3,7 +3,7 @@ using ReactiveUI.Maui;
 using Microsoft.Maui.Controls;
 
 
-namespace ShinyApp
+namespace ShinyApp.Views
 {
 
     public partial class MainPage : ReactiveContentPage<MainViewModel>

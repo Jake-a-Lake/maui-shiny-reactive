@@ -7,7 +7,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:maui="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
     x:DataType="shinyApp:MainViewModel"
-    x:Class="ShinyApp.MainPage">
+    x:Class="ShinyApp.Views.MainPage">
 
     <ScrollView>
         <VerticalStackLayout
