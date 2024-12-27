@@ -38,6 +38,11 @@ namespace ShinyApp
             builder.Configuration.AddJsonPlatformBundle();
             builder.Logging.EnableEnrichment();
             builder.Services.AddSingleton<ILogEnricher, AppLogEnricher>();
+
+            //pages and viewmodels
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddScoped<MainViewModel>();
+
 #if DEBUG
             builder.Logging.SetMinimumLevel(LogLevel.Trace);
             builder.Logging.AddDebug();

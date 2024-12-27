@@ -63,6 +63,33 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
 	  <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+	  <ApplicationId>com.farmerbrothers.shinyapp</ApplicationId>
+	  <ApplicationTitle>JALI MAUI</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	  <ApplicationId>com.farmerbrothers.shinyapp</ApplicationId>
+	  <ApplicationTitle>JALI MAUI</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
+	  <ApplicationId>com.farmerbrothers.shinyapp</ApplicationId>
+	  <ApplicationTitle>JALI MAUI</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
+	  <ApplicationId>com.farmerbrothers.shinyapp</ApplicationId>
+	  <ApplicationTitle>JALI MAUI</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	  <ApplicationId>com.farmerbrothers.shinyapp</ApplicationId>
+	  <ApplicationTitle>JALI MAUI</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
+	  <ApplicationId>com.farmerbrothers.shinyapp</ApplicationId>
+	  <ApplicationTitle>JALI MAUI</ApplicationTitle>
 	</PropertyGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
@@ -80,8 +107,18 @@
 	<ItemGroup>
 		<TrimmerRootDescriptor Include="Linker.xml" Condition="'$(Configuration)' == 'Release'" />
 
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#512BD4" />
+
+		<MauiSplashScreen Include="Resources\AppIcon\appicon.svg">
+		  <Color>#3950c6</Color>
+		  <BaseSize>128,128</BaseSize>
+		</MauiSplashScreen>
+
+		<MauiSplashScreen Include="Resources\Images\jalilogo.svg">
+		  <Color>#3950c6</Color>
+		  <BaseSize>128,128</BaseSize>
+		</MauiSplashScreen>
+		<MauiSplashScreen Include="Resources\Splash\jalilogo.svg" Color="#3950c6" BaseSize="128,128" />
 
 		<MauiImage Include="Resources\Images\*" />
 		<MauiFont Include="Resources\Fonts\*" />
@@ -92,6 +129,10 @@
 
 		<Content Remove="**\appsettings.json" />
         <Content Remove="**\appsettings.*.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\jalilogo.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
