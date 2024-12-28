@@ -28,16 +28,17 @@ namespace ShinyApp
                 {
                     prism.RegisterTypes(container =>
                         {
-                            container.RegisterForNavigation<AppShell>();
-                            container.RegisterForNavigation<MainPage>();
-                            container.RegisterForNavigation<SearchPage>();
-                            container.RegisterForNavigation<ProfilePage>();
+                            //container.RegisterForNavigation<AppShell>();
+                            //container.RegisterForNavigation<MainPage>();
+                            //container.RegisterForNavigation<SearchPage>();
+                            //container.RegisterForNavigation<ProfilePage>();
                         })
                         .CreateWindow("AppShell");
                 })
                 .RegisterLogging()
                 .RegisterServices()
-                .RegisterShinyServices();
+                .RegisterShinyServices()
+                .RegisterRoutes();
 
             builder.Services.AddSingleton<IAppInfo>(AppInfo.Current);
             builder.Services.AddSingleton<IDeviceInfo>(DeviceInfo.Current);
@@ -50,8 +51,8 @@ namespace ShinyApp
             //pages and viewmodels
             builder.Services.AddTransient<AppShell>(); 
             builder.Services.AddTransient<MainPage>();
-            builder.Services.AddTransient<SearchPage>();
-            builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddTransient<SettingsPage>();
+            builder.Services.AddTransient<ToolPage>();
             
             builder.Services.AddScoped<MainViewModel>();
 
@@ -62,7 +63,7 @@ namespace ShinyApp
             builder.Services.AddConnectivity();
             builder.Services.AddBattery();
 
-            builder.Services.RegisterForNavigation<MainPage, MainViewModel>();
+            //builder.Services.RegisterForNavigation<MainPage, MainViewModel>();
             var app = builder.Build();
 
             return app;
@@ -150,7 +151,10 @@ namespace ShinyApp
         {
             var s = builder.Services;
 
+            s.RegisterForNavigation<AppShell>();
             s.RegisterForNavigation<MainPage, MainViewModel>();
+            s.RegisterForNavigation<SettingsPage>();
+            s.RegisterForNavigation<ToolPage>();
 
             // HTTP Transfers
             //s.RegisterForNavigation<HttpTransfers.CreatePage, HttpTransfers.CreateViewModel>("HttpTransfersCreate");

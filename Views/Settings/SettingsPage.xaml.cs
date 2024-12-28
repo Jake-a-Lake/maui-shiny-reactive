@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
- namespace ShinyApp.Views
+
+namespace ShinyApp.Views
 {
-    
-    public partial class ProfilePage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public ProfilePage()
+        public SettingsPage()
         {
             InitializeComponent();
         }

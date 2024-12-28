@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace ShinyApp.Views
+ namespace ShinyApp.Views
 {
-    public partial class SearchPage : ContentPage
+    
+    public partial class ToolPage : ContentPage
     {
-        public SearchPage()
+        public ToolPage()
         {
             InitializeComponent();
         }

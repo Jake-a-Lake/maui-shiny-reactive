@@ -9,12 +9,13 @@
             <ShellContent Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}" />
         </Tab>
 
-        <Tab Title="Search" Icon="search_icon.png">
-            <ShellContent Route="SearchPage" ContentTemplate="{DataTemplate views:SearchPage}" />
+
+        <Tab Title="Tools" Icon="toolbox_icon.png">
+            <ShellContent Route="ToolPage" ContentTemplate="{DataTemplate views:ToolPage}" />
         </Tab>
 
-        <Tab Title="Profile" Icon="profile_icon.png">
-            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" />
+        <Tab Title="Settings" Icon="settings_icon.png">
+            <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate views:SettingsPage}" />
         </Tab>
     </TabBar>
 

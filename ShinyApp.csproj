@@ -179,13 +179,21 @@
     <BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Settings\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tools\ToolPage.xaml.cs">
+      <DependentUpon>ToolPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <MauiXaml Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </MauiXaml>
-    <MauiXaml Update="Views\Profile\ProfilePage.xaml">
+    <MauiXaml Update="Views\Tools\ToolPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Views\Search\SearchPage.xaml">
+    <MauiXaml Update="Views\Settings\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </MauiXaml>
   </ItemGroup>
